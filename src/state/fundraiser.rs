@@ -33,9 +33,9 @@ impl Fundraiser {
         maker: Pubkey,
         mint_to_raise: Pubkey,
         amount_to_raise: u64,
+        time_started: i64,
         duration: u8,
         bump: u8,
-        time_started: i64,
     ) {
         self.is_initialized = true;
         self.maker = maker;
