@@ -1,14 +1,14 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
-}
+#![no_std]
+#![allow(unexpected_cfgs)]
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[cfg(feature = "std")]
+extern crate std;
+#[cfg(not(feature = "no-entrypoint"))]
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
-}
+mod entrypoint;
+pub mod error;
+pub mod instruction;
+pub mod state;
+pub mod utils;
+pub mod constants;
+pinocchio_pubkey::declare_id!("Tz5qRmYdUpJ8KA1WnEcXBv2GRZ3tuFHQy6NMk97LsogT");
